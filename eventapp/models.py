@@ -11,6 +11,21 @@ class Event(models.Model):
     lng = models.FloatField()
     imageUrl = models.URLField(max_length=1024, blank=True, null=True)
     videoUrl = models.URLField(max_length=1024, blank=True, null=True)
+    
+    # # Replace imageUrl with this
+    # image = models.ImageField(
+    #     upload_to='events/images/', 
+    #     blank=True, 
+    #     null=True,
+    #     validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])]
+    # )
+    # # Replace videoUrl with this
+    # video = models.FileField(
+    #     upload_to='events/videos/', 
+    #     blank=True, 
+    #     null=True,
+    #     validators=[FileExtensionValidator(allowed_extensions=['mp4', 'mov', 'avi', 'mkv'])]
+    # )
 
     def __str__(self):
         return self.name
