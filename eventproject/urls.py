@@ -32,13 +32,17 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from eventapp.views import EventViewSet
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+
 router = DefaultRouter()
 router.register(r'events', EventViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),  # <-- make sure you have this line
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 
