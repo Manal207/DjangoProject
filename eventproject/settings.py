@@ -54,7 +54,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3003",  # React's default local dev server address
+    "http://localhost:3001",  # React's default local dev server address
 ]
 
 
