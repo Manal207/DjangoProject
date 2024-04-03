@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-ey)3@!m6(4td5xfrzs)rtih6)_%0qn2y#(oh*f7gky-c3(lauy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
+
 
 
 # Application definition
@@ -55,6 +56,8 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",  # React's default local dev server address
+    "http://localhost:3002",
+
 ]
 
 
@@ -89,7 +92,7 @@ DATABASES = {
         'NAME': 'mydatabase',
         'USER': 'manal',
         'PASSWORD': 'manal123',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
