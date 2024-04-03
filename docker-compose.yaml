@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  app_ui:
+  django_app:
     image: eventapp_ui:latest
     build:
       context: .
@@ -15,3 +15,13 @@ services:
     user: root
     environment:
       NODE_ENV: "dev"
+
+  # PostgreSQL service
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: your_postgres_user
+      POSTGRES_PASSWORD: your_postgres_password
+      POSTGRES_DB: your_database_name
+    ports:
+      - "5432:5432"
